@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 "use strict";
+=======
+'use strict'
+>>>>>>> 39f19595eeccdeb382bc865973588bdc7d72d423
 
 module.exports = {
   /*
@@ -27,7 +31,12 @@ module.exports = {
     | }
     |
     */
+<<<<<<< HEAD
     directives: {},
+=======
+    directives: {
+    },
+>>>>>>> 39f19595eeccdeb382bc865973588bdc7d72d423
     /*
     |--------------------------------------------------------------------------
     | Report only
@@ -94,7 +103,11 @@ module.exports = {
   |
   | Learn more at https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   */
+<<<<<<< HEAD
   xframe: "DENY",
+=======
+  xframe: 'DENY',
+>>>>>>> 39f19595eeccdeb382bc865973588bdc7d72d423
 
   /*
   |--------------------------------------------------------------------------
@@ -132,6 +145,7 @@ module.exports = {
   */
   csrf: {
     enable: true,
+<<<<<<< HEAD
     methods: ["POST", "PUT", "DELETE"],
     filterUris: [
       //las excluimos porque las vamos a realizar desde vuejs
@@ -148,3 +162,15 @@ module.exports = {
     }
   }
 };
+=======
+    methods: ['POST', 'PUT', 'DELETE'],
+    filterUris: [],
+    cookieOptions: {
+      httpOnly: false,
+      sameSite: true,
+      path: '/',
+      maxAge: 7200
+    }
+  }
+}
+>>>>>>> 39f19595eeccdeb382bc865973588bdc7d72d423
