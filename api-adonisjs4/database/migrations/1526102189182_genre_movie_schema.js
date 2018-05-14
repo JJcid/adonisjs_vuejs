@@ -13,7 +13,7 @@ class GenreMovieSchema extends Schema {
   }
 
   down() {
-    this.drop('genre_movies')
+    this.drop('genre_movie')
   }
 }
 

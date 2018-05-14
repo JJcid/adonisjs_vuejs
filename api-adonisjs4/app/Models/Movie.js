@@ -3,24 +3,17 @@
 const Model = use('Model')
 
 class Movie extends Model {
-
-  //si no hemos utilizado table.timestamps() en la migración
-  //debemos de implementar los dos metodos get estáticos siguientes
-  //en todos los modelos en los que no hemos utilizado table.timestamps()
-
-  static get createdAtColumn() {
+  static get createdAtColumn () {
     return null;
   }
 
-  static get updatedAtColumn() {
+  static get updatedAtColumn () {
     return null;
   }
 
-  genres() {
-    return this.belongsToMany('App/Models/Genre') //N:M
+  genres () {
+    return this.belongsToMany('App/Models/Genre')
   }
-
-
 }
 
 module.exports = Movie
