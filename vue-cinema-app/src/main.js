@@ -20,6 +20,7 @@ Vue.use(BlockUI);
 
 //módulos y tipos
 import globalTypes from '@/types/global';
+import authModule from '@/modules/auth';
 
 //vee-validate
 import VeeValidate, {Validator} from 'vee-validate';
@@ -68,7 +69,7 @@ export const store = new Vuex.Store({
     }
   },
   modules: {
-
+    authModule,
   }
 });
 
