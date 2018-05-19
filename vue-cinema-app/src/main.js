@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from '@/App.vue'
+import router from '@/router'
 
 //vue resource
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
-Vue.http.options.root = 'http://127.0.0.1:333/api/v1/';
+Vue.http.options.root = 'http://127.0.0.1:3333/api/v1/';
 Vue.http.interceptors.push((request, next) => {
   request.headers.set('Authorization', `Bearer ${window.localStorage.getItem('_token')}`);
   next();
@@ -32,7 +33,7 @@ Vue.use(VeeValidate);
 
 //vue-tables-2
 import {ClientTable} from 'vue-tables-2';
-Vue.use(ClientTable, {}, false, 'boostrap3', 'default');
+Vue.use(ClientTable, {}, false, 'bootstrap3', 'default');
 
 //Almacén global de datos con vuex
 export const store = new Vuex.Store({
@@ -44,12 +45,14 @@ export const store = new Vuex.Store({
     [globalTypes.actions.changeLanguage]: ({commit}, lang) => {
       commit(globalTypes.mutations.setLanguage, lang);
       switch (lang){
-        case 'en':
+        case 'en': {
           Validator.localize('en', validatorEn);
           break;
-        case 'es':
+        }
+        case 'es': {
           Validator.localize('es', validatorEs);
           break;
+        }
       }
     }
   },
@@ -86,5 +89,6 @@ new Vue({
   el: '#app',
   render: h => h(App),
   store,
-  i18n
+  i18n,
+  router
 })
